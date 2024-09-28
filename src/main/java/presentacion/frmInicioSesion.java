@@ -8,11 +8,11 @@ package presentacion;
  *
  * @author joelr
  */
-public class frmRecuperacionContraseña extends javax.swing.JFrame {
+public class frmInicioSesion extends javax.swing.JFrame {
     /**
      * Creates new form frmPantallaPrincipal
      */
-    public frmRecuperacionContraseña() {
+    public frmInicioSesion() {
         initComponents();
         
     }
@@ -32,11 +32,13 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
         jLabelInicioSesion = new javax.swing.JLabel();
         jLabelCorreoElectronico = new javax.swing.JLabel();
         jTextFieldCorreoElectronico = new javax.swing.JTextField();
-        jButtonEnviar = new javax.swing.JButton();
-        jLabelReenviarCodigo = new javax.swing.JLabel();
-        jLabelInicioSesion1 = new javax.swing.JLabel();
+        jLabelContraseña = new javax.swing.JLabel();
+        jPasswordFieldContraseña = new javax.swing.JPasswordField();
+        jButtonIniciarSesion = new javax.swing.JButton();
+        jLabelOlvidoContraseña = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 700));
 
         PanelFondo.setBackground(new java.awt.Color(0, 0, 0));
         PanelFondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -51,7 +53,7 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
         jLabelInicioSesion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelInicioSesion.setForeground(new java.awt.Color(255, 255, 0));
         jLabelInicioSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInicioSesion.setText("Recuperar Contraseña");
+        jLabelInicioSesion.setText("Iniciar Sesión");
 
         javax.swing.GroupLayout PanelBarraCinepolisLayout = new javax.swing.GroupLayout(PanelBarraCinepolis);
         PanelBarraCinepolis.setLayout(PanelBarraCinepolisLayout);
@@ -59,45 +61,45 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
             PanelBarraCinepolisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBarraCinepolisLayout.createSequentialGroup()
                 .addComponent(jLabelCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jLabelInicioSesion)
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addGap(110, 110, 110)
+                .addComponent(jLabelInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelBarraCinepolisLayout.setVerticalGroup(
             PanelBarraCinepolisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBarraCinepolisLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelInicioSesion)
-                .addGap(20, 20, 20))
+            .addGroup(PanelBarraCinepolisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabelCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelInicioSesion))
         );
 
         jLabelCorreoElectronico.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelCorreoElectronico.setForeground(new java.awt.Color(255, 255, 0));
         jLabelCorreoElectronico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelCorreoElectronico.setText("Codigo");
+        jLabelCorreoElectronico.setText("Correo Electronico");
 
         jTextFieldCorreoElectronico.setForeground(new java.awt.Color(204, 204, 204));
         jTextFieldCorreoElectronico.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldCorreoElectronico.setText("Codigo:");
+        jTextFieldCorreoElectronico.setText("Correo Electronico:");
         jTextFieldCorreoElectronico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCorreoElectronicoActionPerformed(evt);
             }
         });
 
-        jButtonEnviar.setBackground(new java.awt.Color(0, 0, 0));
-        jButtonEnviar.setForeground(new java.awt.Color(255, 255, 0));
-        jButtonEnviar.setText("Enviar");
+        jLabelContraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelContraseña.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelContraseña.setText("Contraseña");
 
-        jLabelReenviarCodigo.setForeground(new java.awt.Color(255, 255, 0));
-        jLabelReenviarCodigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelReenviarCodigo.setText("Reenviar Codigo");
+        jPasswordFieldContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jLabelInicioSesion1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelInicioSesion1.setForeground(new java.awt.Color(255, 255, 0));
-        jLabelInicioSesion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInicioSesion1.setText("Para recuperar su contraseña, enviaremos un correo con un codigo a su cuenta");
+        jButtonIniciarSesion.setBackground(new java.awt.Color(0, 0, 0));
+        jButtonIniciarSesion.setForeground(new java.awt.Color(255, 255, 0));
+        jButtonIniciarSesion.setText("Iniciar Sesión");
+
+        jLabelOlvidoContraseña.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelOlvidoContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelOlvidoContraseña.setText("¿Olvidaste tu contraseña?");
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
@@ -105,48 +107,49 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PanelBarraCinepolis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelFondoLayout.createSequentialGroup()
+                .addGap(220, 220, 220)
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButtonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jLabelInicioSesion1))
-                    .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButtonEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(PanelFondoLayout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(jLabelReenviarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabelOlvidoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(598, Short.MAX_VALUE))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addComponent(PanelBarraCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabelInicioSesion1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(82, 82, 82)
                 .addComponent(jLabelCorreoElectronico)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonEnviar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelReenviarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(330, Short.MAX_VALUE))
+                .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelContraseña)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(jButtonIniciarSesion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelOlvidoContraseña)
+                .addContainerGap(412, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,22 +176,14 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmRecuperacionContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmRecuperacionContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmRecuperacionContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmRecuperacionContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -201,7 +196,7 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmRecuperacionContraseña().setVisible(true);
+                new frmInicioSesion().setVisible(true);
             }
         });
     }
@@ -209,12 +204,13 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelBarraCinepolis;
     private javax.swing.JPanel PanelFondo;
-    private javax.swing.JButton jButtonEnviar;
+    private javax.swing.JButton jButtonIniciarSesion;
     private javax.swing.JLabel jLabelCinepolis;
+    private javax.swing.JLabel jLabelContraseña;
     private javax.swing.JLabel jLabelCorreoElectronico;
     private javax.swing.JLabel jLabelInicioSesion;
-    private javax.swing.JLabel jLabelInicioSesion1;
-    private javax.swing.JLabel jLabelReenviarCodigo;
+    private javax.swing.JLabel jLabelOlvidoContraseña;
+    private javax.swing.JPasswordField jPasswordFieldContraseña;
     private javax.swing.JTextField jTextFieldCorreoElectronico;
     // End of variables declaration//GEN-END:variables
 }
