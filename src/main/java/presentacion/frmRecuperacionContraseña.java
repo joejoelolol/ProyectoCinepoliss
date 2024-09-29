@@ -9,12 +9,13 @@ package presentacion;
  * @author joelr
  */
 public class frmRecuperacionContraseña extends javax.swing.JFrame {
+
     /**
      * Creates new form frmPantallaPrincipal
      */
     public frmRecuperacionContraseña() {
         initComponents();
-        
+
     }
 
     /**
@@ -35,8 +36,10 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
         jButtonEnviar = new javax.swing.JButton();
         jLabelReenviarCodigo = new javax.swing.JLabel();
         jLabelInicioSesion1 = new javax.swing.JLabel();
+        jButtonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 600));
 
         PanelFondo.setBackground(new java.awt.Color(0, 0, 0));
         PanelFondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -45,7 +48,7 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
         PanelBarraCinepolis.setBackground(new java.awt.Color(51, 51, 255));
 
         jLabelCinepolis.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelCinepolis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RecursosPresentacion/IconCinepolis2.png"))); // NOI18N
+        jLabelCinepolis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursosPresentacion/IconCinepolis2.png"))); // NOI18N
         jLabelCinepolis.setText("jLabel1");
 
         jLabelInicioSesion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -99,6 +102,14 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
         jLabelInicioSesion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInicioSesion1.setText("Para recuperar su contraseña, enviaremos un correo con un codigo a su cuenta");
 
+        jButtonVolver.setBackground(new java.awt.Color(204, 204, 204));
+        jButtonVolver.setText("Volver a Inicio");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
         PanelFondoLayout.setHorizontalGroup(
@@ -118,14 +129,19 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
                                 .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(PanelFondoLayout.createSequentialGroup()
                                     .addGap(6, 6, 6)
-                                    .addComponent(jLabelReenviarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jLabelReenviarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonVolver)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addComponent(PanelBarraCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonVolver)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelInicioSesion1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelCorreoElectronico)
@@ -135,7 +151,7 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
                 .addComponent(jButtonEnviar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelReenviarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(330, Short.MAX_VALUE))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,60 +172,18 @@ public class frmRecuperacionContraseña extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCorreoElectronicoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmRecuperacionContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmRecuperacionContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmRecuperacionContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmRecuperacionContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        frmPantallaPrincipal p = new frmPantallaPrincipal();
+        p.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmRecuperacionContraseña().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelBarraCinepolis;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JButton jButtonEnviar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabelCinepolis;
     private javax.swing.JLabel jLabelCorreoElectronico;
     private javax.swing.JLabel jLabelInicioSesion;

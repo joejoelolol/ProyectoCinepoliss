@@ -209,81 +209,46 @@ public class frmPantallaPrincipal extends javax.swing.JFrame {
 
     private void jLabelPelicula1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula1MouseClicked
         if (logeado = false) {
-            frmRegistro registro = new frmRegistro();
+            frmRegistro registro = new frmRegistro(2);
             registro.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jLabelPelicula1MouseClicked
 
     private void jLabelPelicula2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula2MouseClicked
         if (logeado = false) {
-            frmRegistro registro = new frmRegistro();
+            frmRegistro registro = new frmRegistro(2);
             registro.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jLabelPelicula2MouseClicked
 
     private void jButtonCarteleraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCarteleraActionPerformed
         frmCartelera cartelera = new frmCartelera();
         cartelera.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonCarteleraActionPerformed
 
     private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
         frmInicioSesion iniciarsesion = new frmInicioSesion();
         iniciarsesion.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     private void jButtonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseActionPerformed
-        frmRegistro registro = new frmRegistro();
+        frmRegistro registro = new frmRegistro(1);
         registro.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonRegistrarseActionPerformed
 
     private void jLabelPelicula3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula3MouseClicked
         if (logeado = false) {
-            frmRegistro registro = new frmRegistro();
+            frmRegistro registro = new frmRegistro(2);
             registro.setVisible(true);
         }
     }//GEN-LAST:event_jLabelPelicula3MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmPantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmPantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmPantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmPantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmPantallaPrincipal().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelBarraCinepolis;

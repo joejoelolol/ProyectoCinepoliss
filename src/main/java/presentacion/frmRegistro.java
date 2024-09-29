@@ -10,11 +10,18 @@ package presentacion;
  */
 public class frmRegistro extends javax.swing.JFrame {
     /**
-     * Creates new form frmPantallaPrincipal
+     * Crea el form frmPantallaPrincipal
+     * Pide un atributo int para definir si o no mostrar el texto de requerirse registrar.
+     * Si el atributo es 1, viene del boton registrarse, por lo tanto no muestra el texto.
+     * Si el atributo es 2, viene de elegir pelicula sin registrarse, por lo tanto se muestra el texto.
      */
-    public frmRegistro() {
+    public frmRegistro(int num) {
         initComponents();
-        
+        if (num == 1) {
+            this.jLabelRequerido.setVisible(false);
+        }else if (num==2){
+            this.jLabelRequerido.setVisible(true);
+        }
     }
 
     /**
@@ -34,10 +41,25 @@ public class frmRegistro extends javax.swing.JFrame {
         jTextFieldCorreoElectronico = new javax.swing.JTextField();
         jLabelContraseña = new javax.swing.JLabel();
         jPasswordFieldContraseña = new javax.swing.JPasswordField();
-        jButtonIniciarSesion = new javax.swing.JButton();
-        jLabelOlvidoContraseña = new javax.swing.JLabel();
+        jButtonRegistrar = new javax.swing.JButton();
+        jLabelNombre = new javax.swing.JLabel();
+        jTextFieldNombre = new javax.swing.JTextField();
+        jLabelApellidoPaterno = new javax.swing.JLabel();
+        jTextFieldApellidoPaterno = new javax.swing.JTextField();
+        jLabelApellidoMaterno = new javax.swing.JLabel();
+        jTextFieldApellidoMaterno = new javax.swing.JTextField();
+        jLabelFechaNacimiento = new javax.swing.JLabel();
+        jComboBoxDia = new javax.swing.JComboBox<>();
+        jComboBoxMes = new javax.swing.JComboBox<>();
+        jComboBoxAño = new javax.swing.JComboBox<>();
+        jLabelDiaMesAño = new javax.swing.JLabel();
+        jLabelCiudad = new javax.swing.JLabel();
+        jTextFieldCiudad = new javax.swing.JTextField();
+        jLabelRequerido = new javax.swing.JLabel();
+        jButtonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(850, 600));
 
         PanelFondo.setBackground(new java.awt.Color(0, 0, 0));
         PanelFondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -52,7 +74,7 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabelInicioSesion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelInicioSesion.setForeground(new java.awt.Color(255, 255, 0));
         jLabelInicioSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInicioSesion.setText("Iniciar Sesión");
+        jLabelInicioSesion.setText("Registro");
 
         javax.swing.GroupLayout PanelBarraCinepolisLayout = new javax.swing.GroupLayout(PanelBarraCinepolis);
         PanelBarraCinepolis.setLayout(PanelBarraCinepolisLayout);
@@ -60,7 +82,7 @@ public class frmRegistro extends javax.swing.JFrame {
             PanelBarraCinepolisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBarraCinepolisLayout.createSequentialGroup()
                 .addComponent(jLabelCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110)
+                .addGap(188, 188, 188)
                 .addComponent(jLabelInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -92,13 +114,98 @@ public class frmRegistro extends javax.swing.JFrame {
 
         jPasswordFieldContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jButtonIniciarSesion.setBackground(new java.awt.Color(0, 0, 0));
-        jButtonIniciarSesion.setForeground(new java.awt.Color(255, 255, 0));
-        jButtonIniciarSesion.setText("Iniciar Sesión");
+        jButtonRegistrar.setBackground(new java.awt.Color(0, 0, 0));
+        jButtonRegistrar.setForeground(new java.awt.Color(255, 255, 0));
+        jButtonRegistrar.setText("Registrarse");
 
-        jLabelOlvidoContraseña.setForeground(new java.awt.Color(255, 255, 0));
-        jLabelOlvidoContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelOlvidoContraseña.setText("¿Olvidaste tu contraseña?");
+        jLabelNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelNombre.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNombre.setText("Nombre");
+
+        jTextFieldNombre.setForeground(new java.awt.Color(204, 204, 204));
+        jTextFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldNombre.setText("Nombre:");
+        jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreActionPerformed(evt);
+            }
+        });
+
+        jLabelApellidoPaterno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelApellidoPaterno.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelApellidoPaterno.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelApellidoPaterno.setText("Apellido Paterno");
+
+        jTextFieldApellidoPaterno.setForeground(new java.awt.Color(204, 204, 204));
+        jTextFieldApellidoPaterno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldApellidoPaterno.setText("Apellido Paterno:");
+        jTextFieldApellidoPaterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldApellidoPaternoActionPerformed(evt);
+            }
+        });
+
+        jLabelApellidoMaterno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelApellidoMaterno.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelApellidoMaterno.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelApellidoMaterno.setText("Apellido Materno");
+
+        jTextFieldApellidoMaterno.setForeground(new java.awt.Color(204, 204, 204));
+        jTextFieldApellidoMaterno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldApellidoMaterno.setText("Apellido Materno:");
+        jTextFieldApellidoMaterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldApellidoMaternoActionPerformed(evt);
+            }
+        });
+
+        jLabelFechaNacimiento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelFechaNacimiento.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelFechaNacimiento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelFechaNacimiento.setText("Fecha de Nacimiento");
+
+        jComboBoxDia.setBackground(new java.awt.Color(0, 0, 0));
+        jComboBoxDia.setForeground(new java.awt.Color(255, 255, 0));
+        jComboBoxDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        jComboBoxMes.setBackground(new java.awt.Color(0, 0, 0));
+        jComboBoxMes.setForeground(new java.awt.Color(255, 255, 0));
+        jComboBoxMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+
+        jComboBoxAño.setBackground(new java.awt.Color(0, 0, 0));
+        jComboBoxAño.setForeground(new java.awt.Color(255, 255, 0));
+        jComboBoxAño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950" }));
+
+        jLabelDiaMesAño.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelDiaMesAño.setText("DD:MM:AA");
+
+        jLabelCiudad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelCiudad.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelCiudad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelCiudad.setText("Ciudad");
+
+        jTextFieldCiudad.setForeground(new java.awt.Color(204, 204, 204));
+        jTextFieldCiudad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldCiudad.setText("Ciudad:");
+        jTextFieldCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCiudadActionPerformed(evt);
+            }
+        });
+
+        jLabelRequerido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelRequerido.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelRequerido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelRequerido.setText("Debe registrarse para comprar un boleto");
+
+        jButtonVolver.setBackground(new java.awt.Color(204, 204, 204));
+        jButtonVolver.setText("Volver a Inicio");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelFondoLayout = new javax.swing.GroupLayout(PanelFondo);
         PanelFondo.setLayout(PanelFondoLayout);
@@ -106,45 +213,113 @@ public class frmRegistro extends javax.swing.JFrame {
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PanelBarraCinepolis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelFondoLayout.createSequentialGroup()
-                .addGap(220, 220, 220)
+                .addContainerGap()
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButtonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabelOlvidoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(598, Short.MAX_VALUE))
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelFondoLayout.createSequentialGroup()
+                                .addGap(292, 292, 292)
+                                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
+                                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(32, 32, 32))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
+                                        .addGap(44, 44, 44)
+                                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(PanelFondoLayout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jComboBoxDia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jComboBoxMes, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jComboBoxAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabelDiaMesAño))
+                                            .addComponent(jLabelFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(PanelFondoLayout.createSequentialGroup()
+                                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldNombre))
+                                    .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabelApellidoPaterno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(79, 79, 79)
+                                .addComponent(jButtonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelFondoLayout.createSequentialGroup()
+                                .addGap(207, 207, 207)
+                                .addComponent(jLabelRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(331, Short.MAX_VALUE))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabelApellidoMaterno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonVolver))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addComponent(PanelBarraCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
-                .addComponent(jLabelCorreoElectronico)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonVolver)
+                .addGap(9, 9, 9)
+                .addComponent(jLabelRequerido)
+                .addGap(18, 18, 18)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabelCorreoElectronico)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabelNombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabelFechaNacimiento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBoxDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelDiaMesAño))))
+                .addGap(18, 18, 18)
+                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabelContraseña)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabelApellidoPaterno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelFondoLayout.createSequentialGroup()
+                        .addComponent(jLabelCiudad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
+                .addComponent(jLabelApellidoMaterno)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelContraseña)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(jButtonIniciarSesion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelOlvidoContraseña)
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addComponent(jTextFieldApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonRegistrar)
+                .addContainerGap(374, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 1167, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,82 +333,53 @@ public class frmRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCorreoElectronicoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmRegistro().setVisible(true);
-            }
-        });
-    }
+    private void jTextFieldApellidoPaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldApellidoPaternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldApellidoPaternoActionPerformed
+
+    private void jTextFieldApellidoMaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldApellidoMaternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldApellidoMaternoActionPerformed
+
+    private void jTextFieldCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCiudadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCiudadActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        frmPantallaPrincipal p = new frmPantallaPrincipal();
+        p.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelBarraCinepolis;
     private javax.swing.JPanel PanelFondo;
-    private javax.swing.JButton jButtonIniciarSesion;
+    private javax.swing.JButton jButtonRegistrar;
+    private javax.swing.JButton jButtonVolver;
+    private javax.swing.JComboBox<String> jComboBoxAño;
+    private javax.swing.JComboBox<String> jComboBoxDia;
+    private javax.swing.JComboBox<String> jComboBoxMes;
+    private javax.swing.JLabel jLabelApellidoMaterno;
+    private javax.swing.JLabel jLabelApellidoPaterno;
     private javax.swing.JLabel jLabelCinepolis;
+    private javax.swing.JLabel jLabelCiudad;
     private javax.swing.JLabel jLabelContraseña;
     private javax.swing.JLabel jLabelCorreoElectronico;
+    private javax.swing.JLabel jLabelDiaMesAño;
+    private javax.swing.JLabel jLabelFechaNacimiento;
     private javax.swing.JLabel jLabelInicioSesion;
-    private javax.swing.JLabel jLabelOlvidoContraseña;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelRequerido;
     private javax.swing.JPasswordField jPasswordFieldContraseña;
+    private javax.swing.JTextField jTextFieldApellidoMaterno;
+    private javax.swing.JTextField jTextFieldApellidoPaterno;
+    private javax.swing.JTextField jTextFieldCiudad;
     private javax.swing.JTextField jTextFieldCorreoElectronico;
+    private javax.swing.JTextField jTextFieldNombre;
     // End of variables declaration//GEN-END:variables
 }
