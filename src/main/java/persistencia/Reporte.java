@@ -102,7 +102,7 @@ public class Reporte {
         }
     }
     
-    public void generarReporte3(String rutaPDF, Date fechaInicio, Date fechaFin) throws BadElementException, IOException {
+    public void generarReporte2(String rutaPDF, Date fechaInicio, Date fechaFin, String[] nombresSucursales) throws BadElementException, IOException {
         ConexionBD conexionBD = new ConexionBD();
 
         try (Connection conexion = conexionBD.crearConexion()) {
@@ -113,7 +113,10 @@ public class Reporte {
                                     INNER JOIN sala AS s ON f.id_sala = s.id
                                     INNER JOIN sucursal AS su ON s.nombre_sucursal = su.nombre
                                     WHERE DATE(c.fechaHora) BETWEEN (?) AND (?)
+                                    AND su.nombre IN (?)
                                     GROUP BY su.nombre, c.metodoPago;""";
+            // Convertir los arreglos de nombres de sucursales y días en cadenas con formato IN
+            String nombresSucursalesString = String.join(",", Arrays.asList(nombresSucursales));
             
             // Crear un PreparedStatement con marcadores de posición para las listas
             PreparedStatement statement = conexion.prepareStatement(consulta);
@@ -121,6 +124,7 @@ public class Reporte {
             // Establecer los parámetros
             statement.setDate(1, fechaInicio);
             statement.setDate(2, fechaFin);
+            statement.setString(1, nombresSucursalesString);
 
             Document documento = new Document();
             PdfWriter.getInstance(documento, new FileOutputStream(rutaPDF));
@@ -146,6 +150,7 @@ public class Reporte {
                     
                     // Agregar una descripción en negrita antes de la tabla
                     Paragraph descripcion = new Paragraph("Reporte de ganancias por tipos de pagos\n " 
+                                                    +"Sucursales: " + nombresSucursalesString +"\n"
                                                     +"De: " + fechaInicio.toString()
                                                     +" hasta: " + fechaFin.toString());
                     descripcion.setFont(FontFactory.getFont(FontFactory.HELVETICA_BOLD));
