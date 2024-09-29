@@ -52,8 +52,7 @@ public class SucursalDAO implements ISucursalDAO {
 
         while (rs.next()) {
             Sucursal sucursal = new Sucursal();
-            sucursal.setId(rs.getInt("id"));
-            sucursal.setNombre(rs.getString("Nombre"));
+            sucursal.setNombre(rs.getString("nombre"));
             sucursal.setIdCiudad(rs.getInt("id_ciudad"));
             sucursales.add(sucursal);
         }

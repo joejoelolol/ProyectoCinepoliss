@@ -21,7 +21,7 @@ public class Sucursal {
         this.nombre = nombre;
         this.idCiudad = idCiudad;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
