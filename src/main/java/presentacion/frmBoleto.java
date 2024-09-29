@@ -66,15 +66,17 @@ public class frmBoleto extends javax.swing.JFrame {
             PanelBarraCinepolisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBarraCinepolisLayout.createSequentialGroup()
                 .addComponent(jLabelCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(188, 188, 188)
+                .addGap(179, 179, 179)
                 .addComponent(jLabelBoleto, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(670, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelBarraCinepolisLayout.setVerticalGroup(
             PanelBarraCinepolisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBarraCinepolisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabelCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabelBoleto))
+            .addComponent(jLabelCinepolis, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBarraCinepolisLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelBoleto)
+                .addGap(17, 17, 17))
         );
 
         jLabelPelicula.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,7 +136,7 @@ public class frmBoleto extends javax.swing.JFrame {
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addGap(140, 140, 140)
                         .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(571, Short.MAX_VALUE))
         );
         PanelFondoLayout.setVerticalGroup(
             PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

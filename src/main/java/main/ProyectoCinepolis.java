@@ -4,6 +4,9 @@
 
 package main;
 
+import presentacion.frmMenuAdmin;
+import presentacion.frmPantallaPrincipal;
+
 /**
  *
  * @author joelr
@@ -11,6 +14,9 @@ package main;
 public class ProyectoCinepolis {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        frmPantallaPrincipal p = new frmPantallaPrincipal();
+        p.setVisible(true);
+        frmMenuAdmin admin = new frmMenuAdmin();
+        admin.setVisible(true);
     }
 }
