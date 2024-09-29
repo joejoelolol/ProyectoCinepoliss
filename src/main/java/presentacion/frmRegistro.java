@@ -350,7 +350,7 @@ public class frmRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCiudadActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        frmPantallaPrincipal p = new frmPantallaPrincipal();
+        frmPantallaPrincipal p = new frmPantallaPrincipal(false);
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed

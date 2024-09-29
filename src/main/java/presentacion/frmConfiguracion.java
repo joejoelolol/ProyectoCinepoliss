@@ -133,7 +133,7 @@ public class frmConfiguracion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        frmPantallaPrincipal p = new frmPantallaPrincipal();
+        frmPantallaPrincipal p = new frmPantallaPrincipal(true);
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed

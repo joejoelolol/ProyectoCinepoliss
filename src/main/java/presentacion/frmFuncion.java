@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
  * @author joelr
  */
 public class frmFuncion extends javax.swing.JFrame {
+    int num;
     /**
      * Crea el form frmFuncion
      * Pide un atributo int para mostrar los datos de la pelicula elegida.
@@ -19,7 +20,7 @@ public class frmFuncion extends javax.swing.JFrame {
     public frmFuncion(int pelicula) {
         initComponents();
         posterPelicula(pelicula);
-
+        num=pelicula;
     }
 
     /**
@@ -166,6 +167,11 @@ public class frmFuncion extends javax.swing.JFrame {
         jLabelTarjeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursosPresentacion/TarjetaCredito.png"))); // NOI18N
         jLabelTarjeta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 102)));
         jLabelTarjeta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelTarjeta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelTarjetaMouseClicked(evt);
+            }
+        });
 
         jButtonVolver.setBackground(new java.awt.Color(204, 204, 204));
         jButtonVolver.setText("Volver a Inicio");
@@ -293,10 +299,15 @@ public class frmFuncion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        frmPantallaPrincipal p = new frmPantallaPrincipal();
+        frmPantallaPrincipal p = new frmPantallaPrincipal(true);
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed
+
+    private void jLabelTarjetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTarjetaMouseClicked
+        frmDatosTarjeta dt = new frmDatosTarjeta(num);
+        dt.setVisible(true);
+    }//GEN-LAST:event_jLabelTarjetaMouseClicked
 /* 
  * Metodo para elegir el poster de la pelicula en base de la pelicula elegida por el usuario.
  */

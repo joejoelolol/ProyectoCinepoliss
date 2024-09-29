@@ -171,8 +171,7 @@ public class frmDatosTarjeta extends javax.swing.JFrame {
                                         .addComponent(jPasswordFieldContraseña)
                                         .addComponent(jLabelTotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabelTotal1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jButtonPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jButtonPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(PanelFondoLayout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(jComboBoxDia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,7 +236,7 @@ public class frmDatosTarjeta extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCorreoElectronicoActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        frmPantallaPrincipal p = new frmPantallaPrincipal();
+        frmPantallaPrincipal p = new frmPantallaPrincipal(true);
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed

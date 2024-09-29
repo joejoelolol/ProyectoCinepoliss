@@ -10,13 +10,21 @@ package presentacion;
  */
 public class frmPantallaPrincipal extends javax.swing.JFrame {
 
-    private boolean logeado; //Variable para indicar si el usuario se encuentra logeado.
+    private boolean logeadoAux; //Variable para indicar si el usuario se encuentra logeado.
 
     /**
      * Creates new form frmPantallaPrincipal
+     * @param logeado indicia si el usuario esta logeado o no.
+     * Si el Usuario esta logeado, las opciones de Iniciar Sesion y Registrarse cambiaran.
+     * Ademas de que podra comprar su boleto.
      */
-    public frmPantallaPrincipal() {
+    public frmPantallaPrincipal(boolean logeado) {
         initComponents();
+        logeadoAux=logeado;
+        if (logeado=true) {
+            this.jButtonIniciarSesion.setText("Cerrar Sesion");
+            this.jButtonRegistrarse.setText("Configuracion");
+        }
     }
 
     /**
@@ -50,7 +58,7 @@ public class frmPantallaPrincipal extends javax.swing.JFrame {
         PanelBarraCinepolis.setBackground(new java.awt.Color(51, 51, 255));
 
         jLabelCinepolis.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelCinepolis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RecursosPresentacion/IconCinepolis2.png"))); // NOI18N
+        jLabelCinepolis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursosPresentacion/IconCinepolis2.png"))); // NOI18N
         jLabelCinepolis.setText("jLabel1");
 
         jButtonIniciarSesion.setBackground(new java.awt.Color(204, 204, 204));
@@ -208,23 +216,30 @@ public class frmPantallaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelPelicula1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula1MouseClicked
-        if (logeado = false) {
+        if (logeadoAux = false) {
             frmRegistro registro = new frmRegistro(2);
             registro.setVisible(true);
             this.dispose();
+        }else if(logeadoAux=true){
+            frmFuncion funcion= new frmFuncion(1); //Al estar logeado, al presionar en las peliculas de la pantalla principal, te llevara directamente a la compra de la funcion.
+            //El numero indica la pelicula elegida.
         }
     }//GEN-LAST:event_jLabelPelicula1MouseClicked
 
     private void jLabelPelicula2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula2MouseClicked
-        if (logeado = false) {
+        if (logeadoAux = false) {
             frmRegistro registro = new frmRegistro(2);
             registro.setVisible(true);
             this.dispose();
+        }else if(logeadoAux=true){
+            frmFuncion funcion= new frmFuncion(2); //Al estar logeado, al presionar en las peliculas de la pantalla principal, te llevara directamente a la compra de la funcion.
+            //El numero indica la pelicula elegida.
         }
     }//GEN-LAST:event_jLabelPelicula2MouseClicked
 
     private void jButtonCarteleraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCarteleraActionPerformed
-        frmCartelera cartelera = new frmCartelera();
+
+        frmCartelera cartelera = new frmCartelera(logeadoAux);
         cartelera.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonCarteleraActionPerformed
@@ -236,15 +251,24 @@ public class frmPantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     private void jButtonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseActionPerformed
-        frmRegistro registro = new frmRegistro(1);
+        if (logeadoAux=false) {
+           frmRegistro registro = new frmRegistro(1);
         registro.setVisible(true);
-        this.dispose();
+        this.dispose(); 
+        }else if(logeadoAux=true){
+        frmConfiguracion config = new frmConfiguracion();
+        config.setVisible(true);
+    }
+        
     }//GEN-LAST:event_jButtonRegistrarseActionPerformed
 
     private void jLabelPelicula3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula3MouseClicked
-        if (logeado = false) {
+        if (logeadoAux = false) {
             frmRegistro registro = new frmRegistro(2);
             registro.setVisible(true);
+        }else if(logeadoAux=true){
+            frmFuncion funcion= new frmFuncion(3); //Al estar logeado, al presionar en las peliculas de la pantalla principal, te llevara directamente a la compra de la funcion.
+            //El numero indica la pelicula elegida.
         }
     }//GEN-LAST:event_jLabelPelicula3MouseClicked
 

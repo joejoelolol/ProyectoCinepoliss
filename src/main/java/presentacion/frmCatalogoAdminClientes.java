@@ -249,14 +249,14 @@ public class frmCatalogoAdminClientes extends javax.swing.JFrame {
             this.pagina = 1;
             return;
         }
-        this.establecerTituloPaginacion();
-        this.cargarTablaClientes();
+//        this.establecerTituloPaginacion();
+//        this.cargarTablaClientes();
     }//GEN-LAST:event_btnPaginaAnteriorActionPerformed
 
     private void btnPaginaSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaginaSiguienteActionPerformed
         this.pagina++;
-        this.establecerTituloPaginacion();
-        this.cargarTablaClientes();
+//        this.establecerTituloPaginacion();
+//        this.cargarTablaClientes();
     }//GEN-LAST:event_btnPaginaSiguienteActionPerformed
 
 

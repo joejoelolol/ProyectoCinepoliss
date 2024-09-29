@@ -509,6 +509,9 @@
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelTarjetaMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVolver">
           <Properties>

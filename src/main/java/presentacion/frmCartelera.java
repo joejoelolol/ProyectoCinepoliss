@@ -10,13 +10,14 @@ package presentacion;
  */
 public class frmCartelera extends javax.swing.JFrame {
 
-    private boolean logeado; //Variable para indicar si el usuario se encuentra logeado.
+    private boolean logeadoAux; //Variable para indicar si el usuario se encuentra logeado.
 
     /**
      * Creates new form frmPantallaPrincipal
      */
-    public frmCartelera() {
+    public frmCartelera(boolean logeado) {
         initComponents();
+        logeadoAux = logeado;
     }
 
     /**
@@ -132,21 +133,41 @@ public class frmCartelera extends javax.swing.JFrame {
         jLabelPelicula3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RecursosPresentacion/HarryPotter3.jpg"))); // NOI18N
         jLabelPelicula3.setText("jLabel1");
         jLabelPelicula3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabelPelicula3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelPelicula3MouseClicked(evt);
+            }
+        });
 
         jLabelPelicula4.setForeground(new java.awt.Color(255, 255, 255));
         jLabelPelicula4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPelicula4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursosPresentacion/Deadpool3.jpg"))); // NOI18N
         jLabelPelicula4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabelPelicula4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelPelicula4MouseClicked(evt);
+            }
+        });
 
         jLabelPelicula5.setForeground(new java.awt.Color(255, 255, 255));
         jLabelPelicula5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPelicula5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursosPresentacion/TransformersOne.jpg"))); // NOI18N
         jLabelPelicula5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabelPelicula5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelPelicula5MouseClicked(evt);
+            }
+        });
 
         jLabelPelicula6.setForeground(new java.awt.Color(255, 255, 255));
         jLabelPelicula6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPelicula6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursosPresentacion/bettlejuice2.jpg"))); // NOI18N
         jLabelPelicula6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabelPelicula6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelPelicula6MouseClicked(evt);
+            }
+        });
 
         jLabelTitulo2.setForeground(new java.awt.Color(255, 255, 0));
         jLabelTitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -262,18 +283,22 @@ public class frmCartelera extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelPelicula1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula1MouseClicked
-        if (logeado = false) {
+        if (logeadoAux = false) {
             frmRegistro registro = new frmRegistro(2);
             registro.setVisible(true);
             this.dispose();
+        } else if (logeadoAux = true) {
+            frmFuncion f = new frmFuncion(1);
         }
     }//GEN-LAST:event_jLabelPelicula1MouseClicked
 
     private void jLabelPelicula2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula2MouseClicked
-        if (logeado = false) {
+        if (logeadoAux = false) {
             frmRegistro registro = new frmRegistro(2);
             registro.setVisible(true);
             this.dispose();
+        } else if (logeadoAux = true) {
+            frmFuncion f = new frmFuncion(2);
         }
     }//GEN-LAST:event_jLabelPelicula2MouseClicked
 
@@ -284,10 +309,50 @@ public class frmCartelera extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRegistrarseActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-         frmPantallaPrincipal p = new frmPantallaPrincipal();
-         p.setVisible(true);
-         this.dispose();
+        frmPantallaPrincipal p = new frmPantallaPrincipal(logeadoAux);
+        p.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed
+
+    private void jLabelPelicula3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula3MouseClicked
+        if (logeadoAux = false) {
+            frmRegistro registro = new frmRegistro(2);
+            registro.setVisible(true);
+            this.dispose();
+        } else if (logeadoAux = true) {
+            frmFuncion f = new frmFuncion(2);
+        }
+    }//GEN-LAST:event_jLabelPelicula3MouseClicked
+
+    private void jLabelPelicula4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula4MouseClicked
+        if (logeadoAux = false) {
+            frmRegistro registro = new frmRegistro(2);
+            registro.setVisible(true);
+            this.dispose();
+        } else if (logeadoAux = true) {
+            frmFuncion f = new frmFuncion(4);
+        }
+    }//GEN-LAST:event_jLabelPelicula4MouseClicked
+
+    private void jLabelPelicula5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula5MouseClicked
+        if (logeadoAux = false) {
+            frmRegistro registro = new frmRegistro(2);
+            registro.setVisible(true);
+            this.dispose();
+        } else if (logeadoAux = true) {
+            frmFuncion f = new frmFuncion(5);
+        }
+    }//GEN-LAST:event_jLabelPelicula5MouseClicked
+
+    private void jLabelPelicula6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPelicula6MouseClicked
+                if (logeadoAux = false) {
+            frmRegistro registro = new frmRegistro(2);
+            registro.setVisible(true);
+            this.dispose();
+        }else if (logeadoAux = true) {
+            frmFuncion f = new frmFuncion(6);
+        }
+    }//GEN-LAST:event_jLabelPelicula6MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

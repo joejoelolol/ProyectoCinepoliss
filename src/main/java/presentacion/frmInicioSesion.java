@@ -4,17 +4,26 @@
  */
 package presentacion;
 
+import javax.swing.JOptionPane;
+import negocio.ClienteNegocio;
+import negocio.IClienteNegocio;
+
 /**
  *
  * @author joelr
  */
 public class frmInicioSesion extends javax.swing.JFrame {
+
+    private IClienteNegocio cn = new ClienteNegocio();
+    private boolean logeado;
+
     /**
      * Creates new form frmPantallaPrincipal
      */
     public frmInicioSesion() {
         initComponents();
-        
+       this.setVisible(true);
+
     }
 
     /**
@@ -97,6 +106,11 @@ public class frmInicioSesion extends javax.swing.JFrame {
         jButtonIniciarSesion.setBackground(new java.awt.Color(0, 0, 0));
         jButtonIniciarSesion.setForeground(new java.awt.Color(255, 255, 0));
         jButtonIniciarSesion.setText("Iniciar Sesión");
+        jButtonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIniciarSesionActionPerformed(evt);
+            }
+        });
 
         jLabelOlvidoContraseña.setForeground(new java.awt.Color(255, 255, 0));
         jLabelOlvidoContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -117,20 +131,19 @@ public class frmInicioSesion extends javax.swing.JFrame {
             .addComponent(PanelBarraCinepolis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelFondoLayout.createSequentialGroup()
                 .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelFondoLayout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButtonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabelContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(PanelFondoLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabelOlvidoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PanelFondoLayout.createSequentialGroup()
+                            .addGap(226, 226, 226)
+                            .addComponent(jLabelOlvidoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFondoLayout.createSequentialGroup()
+                            .addGap(220, 220, 220)
+                            .addGroup(PanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabelContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldCorreoElectronico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                .addComponent(jButtonIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(PanelFondoLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jButtonVolver)))
@@ -176,12 +189,24 @@ public class frmInicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCorreoElectronicoActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        frmPantallaPrincipal p = new frmPantallaPrincipal();
+        frmPantallaPrincipal p = new frmPantallaPrincipal(false);
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
-    
+    private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
+
+        try {
+            cn.buscarPorCorreo(this.jTextFieldCorreoElectronico.getText());
+            logeado=true;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "El correo electronico no existe");
+            logeado=false;
+        }
+        frmPantallaPrincipal mn = new frmPantallaPrincipal(true);
+        mn.setVisible(true);
+    }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelBarraCinepolis;
